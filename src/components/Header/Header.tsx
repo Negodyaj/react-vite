@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.scss";
 import logo from "./assets/Logo.png";
 
@@ -9,18 +10,21 @@ export const Header = () => {
         <img src="./assets/burger.svg" alt="Menu" />
       </button>
       <nav className="flex">
-        <a href="" className="nav-link">
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+        <Link to="qwerty" className="nav-link">
           Marketplace
-        </a>
-        <a href="" className="nav-link">
+        </Link>
+        <Link to="" className="nav-link">
           Rankings
-        </a>
-        <a href="" className="nav-link">
+        </Link>
+        <Link to="" className="nav-link">
           Connect a wallet
-        </a>
-        <a href="" className="nav-button fill">
+        </Link>
+        <Link to="sign-up" className="nav-button fill">
           Sign Up
-        </a>
+        </Link>
       </nav>
     </header>
   );

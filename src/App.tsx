@@ -1,33 +1,41 @@
-import { useState } from "react";
+//import { useState } from "react";
 import "./App.scss";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
-import { Button } from "./components/Button/Button";
 import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
+import { Route, Routes } from "react-router-dom";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
-  const [count, setCount] = useState(0);
+  //const [count, setCount] = useState(0);
+
+  let isAuthenticated = false;
 
   return (
     <>
       <Header />
 
-      <HomePage />
-      <RegisterPage />
+      <main>
+        {isAuthenticated ? (
+          <Routes>
+            <Route index path="/" element={<HomePage />} />
+            <Route path="catalog" element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route index path="/" element={<HomePage />} />
+            <Route path="sign-up" element={<RegisterPage />} />
+            <Route path="log-in" element={<RegisterPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        )}
+      </main>
 
-      <Button />
+      <button>press me</button>
 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Footer />
     </>
   );
 }

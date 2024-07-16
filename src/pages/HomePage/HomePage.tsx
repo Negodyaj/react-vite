@@ -3,11 +3,31 @@ import { Hero } from "./components/Hero/Hero";
 import avatar from "./av1.png";
 import image from "./img1.png";
 import "./HomePage.scss";
+import { useState } from "react";
 
 export const HomePage = () => {
+  const [counter, setCounter] = useState<number | undefined>(undefined);
+  const [a, setA] = useState("");
+
+  function increaseCounter() {
+    setCounter(counter ? counter + 1 : 1);
+    setA("qwerty");
+  }
+
+  const decreaseCounter = () => {
+    setCounter(counter !== undefined ? counter - 1 : 1);
+    console.log(counter);
+  };
+
   return (
     <div id="home-page">
       <Hero />
+      <section className="container">
+        Counter: {counter} <br />
+        <button onClick={increaseCounter}>Increase</button> &nbsp;{" "}
+        <button onClick={decreaseCounter}>Decrease</button>
+        {a}
+      </section>
       <section id="mushroom-container">
         <img src="./assets/mushroom.png" alt="" />
       </section>
@@ -27,7 +47,7 @@ export const HomePage = () => {
         <div className="artists-container my-slider"></div>
       </div>
 
-      <div className="container">
+      <div className="container" id="decoration">
         <div className="decoration-container">
           <h2>Lorem ipsum dolor sit amet consectetur</h2>
           <img src={avatar} alt="" />
