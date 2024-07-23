@@ -3,20 +3,31 @@ import { Hero } from "./components/Hero/Hero";
 import avatar from "./av1.png";
 import image from "./img1.png";
 import "./HomePage.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const HomePage = () => {
   const [counter, setCounter] = useState<number | undefined>(undefined);
-  const [a, setA] = useState("");
+  const [superMode, setSuperMode] = useState(false);
+
+  useEffect(() => {
+    console.log("effect");
+  }, [counter, superMode]);
+
+  useEffect(() => {
+    console.log("superMode effect");
+  }, [superMode]);
 
   function increaseCounter() {
     setCounter(counter ? counter + 1 : 1);
-    setA("qwerty");
   }
 
   const decreaseCounter = () => {
     setCounter(counter !== undefined ? counter - 1 : 1);
     console.log(counter);
+  };
+
+  const makeSuper = () => {
+    setSuperMode(!superMode);
   };
 
   return (
@@ -26,8 +37,9 @@ export const HomePage = () => {
         Counter: {counter} <br />
         <button onClick={increaseCounter}>Increase</button> &nbsp;{" "}
         <button onClick={decreaseCounter}>Decrease</button>
-        {a}
+        <button onClick={makeSuper}>SuperPower</button>
       </section>
+      <section>{superMode && "SUPER!!!!"}</section>
       <section id="mushroom-container">
         <img src="./assets/mushroom.png" alt="" />
       </section>
