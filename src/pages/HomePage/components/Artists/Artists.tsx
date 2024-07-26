@@ -14,7 +14,7 @@ export function Artists(): React.JSX.Element {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users: UserDto[]) => {
-        console.log('sending artists to state');
+        console.debug('sending artists to state');
         const avatars = [
           'https://static.scientificamerican.com/sciam/cache/file/32665E6F-8D90-4567-9769D59E11DB7F26_source.jpg?w=1200',
           'https://cdn.theatlantic.com/thumbor/d8lh_KAZuOgBYslMOP4T0iu9Fks=/0x62:2000x1187/1600x900/media/img/mt/2018/03/AP_325360162607/original.jpg',

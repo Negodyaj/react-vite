@@ -26,7 +26,72 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error", "debug", "info"]
+      }
+    ],
     'import/prefer-default-export': "off",
-    'jsx-a11y/label-has-associated-control': 'off'
+    'jsx-a11y/label-has-associated-control': 'off',
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "default",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "variableLike",
+        "leadingUnderscore": "allow",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "memberLike",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "enumMember",
+        "format": ["PascalCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "variable",
+        "leadingUnderscore": "allow",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean", "array"],
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "variable",
+        "types": ["string", "number"],
+        "format": ["camelCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "property",
+        "leadingUnderscore": "allow",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"]
+      },
+      {
+        "selector": "objectLiteralProperty",
+        "leadingUnderscore": "allow",
+        "format": null
+      },
+      {
+        "selector": "accessor",
+        "leadingUnderscore": "allow",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      }
+    ],
   },
 }
