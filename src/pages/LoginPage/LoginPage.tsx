@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export const LoginPage = () => {
+export function LoginPage() {
   return (
     <form>
       <label>
@@ -11,4 +11,4 @@ export const LoginPage = () => {
       </label>
     </form>
   );
-};
+}

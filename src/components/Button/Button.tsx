@@ -1,5 +1,10 @@
-import "./Button.scss";
+import React from 'react';
+import './Button.scss';
 
-export const Button = () => {
-  return <button className="button">Button</button>;
-};
+export function Button(): React.JSX.Element {
+  return (
+    <button className="button" type="button">
+      Button
+    </button>
+  );
+}

@@ -1,17 +1,17 @@
-//import { useState } from "react";
-import "./App.scss";
-import { HomePage } from "./pages/HomePage/HomePage";
-import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import { Route, Routes } from "react-router-dom";
-import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
-import { LoginPage } from "./pages/LoginPage/LoginPage";
+import React from 'react';
+import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './pages/HomePage/HomePage';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
 
-function App() {
-  //const [count, setCount] = useState(0);
+function App(): React.JSX.Element {
+  // const [count, setCount] = useState(0);
 
-  let isAuthenticated = false;
+  const isAuthenticated = false;
 
   return (
     <>
@@ -34,7 +34,7 @@ function App() {
         )}
       </main>
 
-      <button>press me</button>
+      <button type="button">press me</button>
 
       <Footer />
     </>

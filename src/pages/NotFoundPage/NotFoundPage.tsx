@@ -1,6 +1,6 @@
-import React from "react";
-import "./NotFoundPage.scss";
+import React from 'react';
+import './NotFoundPage.scss';
 
-export const NotFoundPage = () => {
+export function NotFoundPage(): React.JSX.Element {
   return <div>NotFoundPage: 1721150097435</div>;
-};
+}

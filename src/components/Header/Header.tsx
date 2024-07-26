@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import "./Header.scss";
-import logo from "./assets/Logo.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.scss';
+import logo from './assets/Logo.png';
 
-export const Header = () => {
+export function Header(): React.JSX.Element {
   return (
     <header className="flex">
       <img src={logo} alt="NFT Marketplace" />
@@ -16,10 +17,10 @@ export const Header = () => {
         <Link to="qwerty" className="nav-link">
           Marketplace
         </Link>
-        <Link to="" className="nav-link">
+        <Link to="/" className="nav-link">
           Rankings
         </Link>
-        <Link to="" className="nav-link">
+        <Link to="/" className="nav-link">
           Connect a wallet
         </Link>
         <Link to="sign-up" className="nav-button fill">
@@ -28,4 +29,4 @@ export const Header = () => {
       </nav>
     </header>
   );
-};
+}

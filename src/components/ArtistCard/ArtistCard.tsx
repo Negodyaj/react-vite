@@ -1,4 +1,5 @@
-import "./ArtistCard.scss";
+import React from 'react';
+import './ArtistCard.scss';
 
 interface ArtistCardProps {
   artist: ArtistDto;
@@ -11,13 +12,13 @@ export interface ArtistDto {
   avatar: string;
 }
 
-export const ArtistCard = (props: ArtistCardProps) => {
-  const { totalSales, counter, name } = props.artist;
+export function ArtistCard({ artist }: ArtistCardProps): React.JSX.Element {
+  const { totalSales, counter, name, avatar } = artist;
 
   return (
     <div className="artist-card">
       <div className="number">{counter}</div>
-      <img src="${avatar}" alt="" />
+      <img src={avatar} alt="" />
       <div className="name">{name}</div>
       <div className="total-sales">
         <span className="">Total Sales: </span>
@@ -25,4 +26,4 @@ export const ArtistCard = (props: ArtistCardProps) => {
       </div>
     </div>
   );
-};
+}

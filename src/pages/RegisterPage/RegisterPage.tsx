@@ -1,6 +1,7 @@
-import "./RegisterPage.scss";
+import React from 'react';
+import './RegisterPage.scss';
 
-export const RegisterPage = () => {
+export function RegisterPage(): React.JSX.Element {
   return (
     <form>
       RegisterPage <br />
@@ -10,4 +11,4 @@ export const RegisterPage = () => {
       </label>
     </form>
   );
-};
+}
