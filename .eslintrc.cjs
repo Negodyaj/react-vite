@@ -32,6 +32,7 @@ module.exports = {
         "allow": ["warn", "error", "debug", "info"]
       }
     ],
+    'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': "off",
     'jsx-a11y/label-has-associated-control': 'off',
     "@typescript-eslint/naming-convention": [
