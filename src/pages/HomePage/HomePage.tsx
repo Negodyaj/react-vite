@@ -9,6 +9,8 @@ export function HomePage(): React.JSX.Element {
   const [counter, setCounter] = useState<number | undefined>(undefined);
   const [superMode, setSuperMode] = useState(false);
 
+  const [secretValue, setSecretValue] = useState(0);
+
   useEffect(() => {
     console.debug('effect');
   }, [counter, superMode]);
@@ -30,9 +32,15 @@ export function HomePage(): React.JSX.Element {
     setSuperMode(!superMode);
   };
 
+  const changeSecretValue = (increaseValue: number) => {
+    setSecretValue(secretValue + increaseValue);
+  };
+
   return (
     <div id="home-page">
-      <Hero />
+      <Hero changeSecretValue={changeSecretValue} />
+
+      <Artists secretValue={secretValue} />
       <section className="container">
         Counter: {counter} <br />
         <button type="button" onClick={increaseCounter}>
@@ -58,8 +66,6 @@ export function HomePage(): React.JSX.Element {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quos illum. Provident numquam qui aperiam
         </p>
       </div>
-
-      <Artists />
 
       <div className="container">
         <div className="artists-container my-slider" />

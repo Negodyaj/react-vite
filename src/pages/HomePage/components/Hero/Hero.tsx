@@ -1,7 +1,15 @@
 import React from 'react';
 import './Hero.scss';
 
-export function Hero(): React.JSX.Element {
+interface HeroProps {
+  changeSecretValue: (increaseValue: number) => void;
+}
+
+export function Hero({ changeSecretValue }: HeroProps): React.JSX.Element {
+  const onIncreaseBtnClick = (increaseValue: number) => {
+    changeSecretValue(increaseValue);
+  };
+
   return (
     <section id="hero-section">
       <div className="container flex">
@@ -22,6 +30,15 @@ export function Hero(): React.JSX.Element {
         </div>
         <div className="right" />
       </div>
+      <button onClick={() => onIncreaseBtnClick(1)} type="button">
+        +1
+      </button>
+      <button onClick={() => onIncreaseBtnClick(2)} type="button">
+        +2
+      </button>
+      <button onClick={() => onIncreaseBtnClick(4)} type="button">
+        +4
+      </button>
     </section>
   );
 }
