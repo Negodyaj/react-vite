@@ -4,12 +4,17 @@ import { Hero } from './components/Hero/Hero';
 import avatar from './av1.png';
 import image from './img1.png';
 import './HomePage.scss';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { incrementByAmount, selectCount } from '../../store/counterSlice';
 
 export function HomePage(): React.JSX.Element {
   const [counter, setCounter] = useState<number | undefined>(undefined);
   const [superMode, setSuperMode] = useState(false);
 
   const [secretValue, setSecretValue] = useState(0);
+
+  const count = useAppSelector(selectCount);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     console.debug('effect');
@@ -20,7 +25,7 @@ export function HomePage(): React.JSX.Element {
   }, [superMode]);
 
   function increaseCounter() {
-    setCounter(counter ? counter + 1 : 1);
+    dispatch(incrementByAmount(10));
   }
 
   const decreaseCounter = () => {
@@ -42,7 +47,7 @@ export function HomePage(): React.JSX.Element {
 
       <Artists secretValue={secretValue} />
       <section className="container">
-        Counter: {counter} <br />
+        Counter: {count} <br />
         <button type="button" onClick={increaseCounter}>
           Increase
         </button>{' '}

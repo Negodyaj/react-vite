@@ -35,6 +35,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': "off",
     'jsx-a11y/label-has-associated-control': 'off',
+    'no-param-reassign': 'off',
+    'import/no-cycle': 'off',
     "@typescript-eslint/naming-convention": [
       "warn",
       {
